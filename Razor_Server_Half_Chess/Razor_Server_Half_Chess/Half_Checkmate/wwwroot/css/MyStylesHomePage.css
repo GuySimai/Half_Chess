@@ -1,0 +1,174 @@
+﻿/* Title style */
+h1.mystyle {
+    color: #fff; /* White text color */
+    background: linear-gradient(135deg, #d2b48c 25%, #000 25%, #000 50%, #d2b48c 50%, #d2b48c 75%, #000 75%, #000 100%); /* Checkerboard gradient */
+    background-size: 56.57px 56.57px; /* Tile size */
+    padding: 20px 40px;
+    font-family: 'Arial', sans-serif; /* Modern and readable font */
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase; /* Make all letters uppercase */
+    letter-spacing: 3px; /* Letter spacing */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin: 0; /* No margin around the title */
+    width: 100%;
+    position: absolute; /* Position the title on top of the image */
+    top: 20px; /* Top margin */
+    left: 50%; /* Center the title horizontally */
+    transform: translateX(-50%); /* Precisely align the title */
+    z-index: 2; /* Ensure the title is above all other elements */
+}
+
+/* General styling of the HTML page */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+/* General body styling */
+body {
+    margin-bottom: 60px;
+    font-family: Arial, sans-serif;
+}
+
+/* Image styling */
+img.img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+/* Text overlay on the image */
+.text-on-image {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* Buttons positioned in the top left corner under the title */
+.button-group {
+    position: absolute;
+    top: 140px; /* Position buttons under the title */
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 3;
+}
+
+/* Button styling */
+.overlay-button {
+    display: block;
+}
+
+    .overlay-button .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+        .overlay-button .btn:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+/* Form centered on the image */
+.form-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Adjust width for very small screens */
+@media (max-width: 576px) {
+    .text-on-image {
+        font-size: 1.5rem;
+        top: 10px;
+        left: 10px;
+    }
+
+    .form-overlay {
+        padding: 15px;
+        width: 90%;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+/* Image and button wrapper */
+.position-relative {
+    position: relative;
+    width: 100%; /* Ensure the image takes up full width */
+}
+
+/* Table styling */
+table.cinereousTable {
+    position: absolute;
+    top: calc(120px + 1cm); /* Move the table 2cm down */
+    left: calc(25% + 75px); /* Position the table to the right of the buttons */
+    width: 60%; /* Limit table width */
+    background-color: #FFE3C6;
+    border: 6px solid #948473;
+    text-align: center;
+    z-index: 1; /* Table below buttons */
+    box-sizing: border-box;
+}
+
+    /* Table cell styling */
+    table.cinereousTable td, table.cinereousTable th {
+        border: 1px solid #948473;
+        padding: 4px 4px;
+    }
+
+    /* Table header styling */
+    table.cinereousTable thead {
+        background: linear-gradient(to bottom, #afa396 0%, #9e9081 66%, #948473 100%);
+    }
+
+        table.cinereousTable thead th {
+            font-size: 17px;
+            font-weight: bold;
+            color: #F0F0F0;
+            text-align: left;
+            border-left: 2px solid #948473;
+        }
+
+            table.cinereousTable thead th:first-child {
+                border-left: none;
+            }
+
+    /* Table footer styling */
+    table.cinereousTable tfoot {
+        font-size: 16px;
+        font-weight: bold;
+        color: #F0F0F0;
+        background: linear-gradient(to bottom, #afa396 0%, #9e9081 66%, #948473 100%);
+    }
+
+        table.cinereousTable tfoot td {
+            font-size: 16px;
+        }

@@ -1,0 +1,91 @@
+﻿@page
+@model Razor_Server_Half_Chess.Pages.GamesResultsAndPlayers.PlayersGroupedByCountryModel
+@{
+}
+
+<div class="text-left mb-2 position-relative">
+    <h1 class="mystyle text-on-image">Half Chess</h1>
+</div>
+
+<div class="mt-5 position-relative">
+    <div class="image-container">
+        <img src="~/Images/Homepage_Photo.jpeg" title="Homepage Photo" class="img-fluid" />
+
+        <!-- Buttons at the bottom of the image -->
+        <!-- Positions the element absolutely at the bottom with a 10px offset -->
+        <div class="numbered-buttons" style="position: absolute; bottom: calc(10px);">
+            <form action="/Users" method="get" style="display: inline-block; margin-right: 3px; margin-bottom: 5px;">
+                <button type="submit" class="btn btn-primary">All Players (Sort by Name)</button>
+            </form>
+
+            <form action="/GamesResultsAndPlayers/UserNameWithLastGame" method="get" style="display: inline-block; margin-right: 3px; margin-bottom: 5px;">
+                <button type="submit" class="btn btn-primary">Players and Last Game Date</button>
+            </form>
+
+            <form action="/ChessGames" method="get" style="display: inline-block; margin-right: 3px; margin-bottom: 5px;">
+                <button type="submit" class="btn btn-primary">Chess Games</button>
+            </form>
+
+            <form action="/GamesResultsAndPlayers/FirstPlayerFromEachCountry" method="get" style="display: inline-block; margin-right: 3px; margin-bottom: 5px;">
+                <button type="submit" class="btn btn-primary">First Player from Each Country</button>
+            </form>
+
+            <form action="/GamesResultsAndPlayers/ShowGamesForSelectedPlayer" method="get" style="display: inline-block; margin-right: 3px; margin-bottom: 5px;">
+                <button type="submit" class="btn btn-primary">Games for Selected Player</button>
+            </form>
+
+            <form action="/GamesResultsAndPlayers/GamesCountPerPlayer" method="get" style="display: inline-block; margin-right: 3px; margin-bottom: 5px;">
+                <button type="submit" class="btn btn-primary">Games Count Per Player</button>
+            </form>
+
+            <form action="/GamesResultsAndPlayers/PlayersGroupedbyGamesPlayed" method="get" style="display: inline-block; margin-right: 3px; margin-bottom: 5px;">
+                <button type="submit" class="btn btn-primary">Players Grouped by Games Played</button>
+            </form>
+
+            <form action="/GamesResultsAndPlayers/PlayersGroupedByCountry" method="get" style="display: inline-block; margin-right: 3px; margin-bottom: 5px;">
+                <button type="submit" class="btn btn-primary">Players Grouped By Country</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main buttons of the program -->
+    <div class="button-group">
+        <div class="overlay-button">
+            <a asp-page="/Index" class="btn btn-primary">Home</a>
+        </div>
+        <div class="overlay-button">
+            <a asp-page="/Users/Create" class="btn btn-primary">Register New Player</a>
+        </div>
+        <div class="overlay-button">
+            <a asp-page="/Users/Index" class="btn btn-primary">Game Results and Players</a>
+        </div>
+        <div class="overlay-button">
+            <a asp-page="/Privacy" class="btn btn-primary">Privacy</a>
+        </div>
+    </div>
+
+    <!-- Table with player information -->
+    <table class="cinereousTable">
+        <div style="clear: both;"></div>
+        @foreach (var group in Model.GroupedTblUsers)
+        {
+                <thead>
+                    <tr>
+                        <!-- Using colspan to span the header across all columns -->
+                        <th colspan="4">Country: @group.Key</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in group)
+                {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                <td>@Html.DisplayFor(modelItem => item.UserID)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Phone)</td>
+                                <td>@Html.DisplayFor(modelItem => item.NumberOfGames)</td>
+                            </tr>
+                }
+                </tbody>
+        }
+    </table>
+</div>

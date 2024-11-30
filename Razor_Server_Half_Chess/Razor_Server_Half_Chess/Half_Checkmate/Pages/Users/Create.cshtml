@@ -1,0 +1,69 @@
+﻿@page
+@model Half_Checkmate.Pages.Users.CreateModel
+
+<div class="text-left mb-2 position-relative">
+	<h1 class="mystyle text-on-image">Half Chess</h1>
+</div>
+
+<div class="mt-5 position-relative">
+	<img src="~/Images/Homepage_Photo.jpeg" title="Homepage Photo" class="img-fluid" />
+
+	   <div class="button-group">
+		<div class="overlay-button">
+			<a asp-page="/Index" class="btn btn-primary">Home</a>
+		</div>
+		<div class="overlay-button">
+			<a asp-page="./Users/Create" class="btn btn-primary">Register New Player</a>
+		</div>
+		<div class="overlay-button">
+			<a asp-page="/Users/Index" class="btn btn-primary">Game Results and Players</a>
+		</div>
+		<div class="overlay-button">
+			<a asp-page="/Privacy" class="btn btn-primary">Privacy</a>
+		</div>
+	</div>
+
+	<div class="form-overlay">
+		<form method="post" autocomplete="on" action="">
+			<!-- 'form-group' groups form elements together, 'mb-3' adds margin-bottom for spacing. -->
+			<div class="form-group mb-3">
+				<label asp-for="TblUsers.Name" class="control-label"></label>
+				<input asp-for="TblUsers.Name" class="form-control" />
+				<span asp-validation-for="TblUsers.Name" class="text-danger"></span>   
+			</div>
+
+			<div class="form-group mb-3">
+				<label asp-for="TblUsers.UserID" class="control-label">User ID</label>
+				<input asp-for="TblUsers.UserID" type="number" min=1 max=1000 step=1 class="form-control" />
+				<span asp-validation-for="TblUsers.UserID" class="text-danger"></span>
+			</div>
+
+
+			<div class="form-group mb-3">
+				<label asp-for="TblUsers.Phone" class="control-label">Phone</label>
+				<input asp-for="TblUsers.Phone" class="form-control" />
+				<span asp-validation-for="TblUsers.Phone" class="text-danger"></span>   
+			</div>
+
+			<div class="form-group mb-3">
+				<label asp-for="TblUsers.Country" class="control-label">Country</label>
+				@Html.DropDownListFor(model => model.TblUsers.Country, new SelectList(Model.Countries), string.Empty, new { @class = "form-control" })
+				<span asp-validation-for="TblUsers.Country" class="text-danger"></span>
+			</div>
+
+
+			@if (TempData["SuccessMessage"] != null)
+			{
+					<div class="alert alert-success mt-3">
+					@TempData["SuccessMessage"]
+				</div>
+			}
+
+			<div class="form-group">
+				<button asp-page="" class="btn btn-primary" autofocus>Press here</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+

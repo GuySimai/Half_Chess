@@ -1,0 +1,53 @@
+﻿@page
+@model IndexModel
+
+<div class="text-left mb-2 position-relative">
+    <h1 class="mystyle text-on-image">Half Chess</h1> <!-- Custom class for styling, likely for the header -->
+</div>
+
+<div class="mt-5 position-relative">
+    <img src="~/Images/Homepage_Photo.jpeg" title="Homepage Photo" class="img-fluid" /> <!-- 'img-fluid' makes the image responsive, scaling to fit its container. -->
+    
+    <div class="button-group">
+        <div class="overlay-button">
+            <a asp-page="/Index" class="btn btn-primary">Home</a> <!-- 'btn' styles the button -->
+
+        </div>
+        <div class="overlay-button">
+            <a asp-page="./Users/Create" class="btn btn-primary">Register New Player</a>
+        </div>
+        <div class="overlay-button">
+            <a asp-page="./Users/Index" class="btn btn-primary">Game Results and Players</a>
+        </div>
+        <div class="overlay-button">
+            <a asp-page="/Privacy" class="btn btn-primary">Privacy</a>
+        </div>
+    </div>
+
+    <div class="form-overlay">
+        <form method="post" autocomplete="on" action=""><!-- 'autocomplete="on"' enables autofill for form fields. -->
+                                                        <!-- 'action=""' submits the form to the current page. -->
+            <div class="overlay-content"> <!-- 'overlay-content' styles content displayed on top of other elements. -->
+                <h2>Welcome to Half-Chess!</h2>
+                <p>Half-Chess is a fast-paced twist on classic chess.</p>
+
+                <h3>Board</h3>
+                <ul> <!-- 'ul' defines an unordered list, 'li' defines a list item. -->
+                    <li>8 squares long, 4 squares wide, with pieces set on the right side of a standard chessboard.</li>
+                </ul>
+
+                <h3>Rules:</h3>
+                <ul>
+                    <li><strong>Follows standard chess rules with two changes:</strong></li>
+                </ul>
+
+                <ul>
+                    <li><strong>Time Limit:</strong> Players must move within a set time, or they lose the game.</li>
+                    <li><strong>Pawns Move Sideways:</strong> Pawns can move one square left or right (without capturing), allowing for strategic positioning.</li>
+                </ul>
+
+                <p>Enjoy the game and plan your moves wisely!</p>
+            </div>
+        </form>
+    </div>
+</div>

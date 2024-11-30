@@ -1,0 +1,38 @@
+﻿@page
+@model PrivacyModel
+
+
+<div class="text-left mb-2 position-relative">
+	<h1 class="mystyle text-on-image">Half Chess</h1>
+</div>
+
+<div class="mt-5 position-relative">
+	<img src="~/Images/Homepage_Photo.jpeg" title="Homepage Photo" class="img-fluid" />
+
+	<div class="button-group">
+		<div class="overlay-button">
+			<a asp-page="/Index" class="btn btn-primary">Home</a>
+		</div>
+		<div class="overlay-button">
+			<a asp-page="./Users/Create" class="btn btn-primary">Register New Player</a>
+		</div>
+		<div class="overlay-button">
+			<a asp-page="./Users/Index" class="btn btn-primary">Game Results and Players</a>
+		</div>
+		<div class="overlay-button">
+			<a asp-page="/Privacy" class="btn btn-primary">Privacy</a>
+		</div>
+	</div>
+
+	<div class="form-overlay">
+		<form method="post" autocomplete="on" action="">
+			<div class="overlay-content">
+				<h2>Creator Information</h2>
+				<p><strong>Creator:</strong> Guy Simai</p>
+				<p><strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/guy-simai/" target="_blank">Linkedin Profile</a></p>
+				<p><strong>Github:</strong> <a href="https://github.com/GuySimai" target="_blank">GitHub Profile</a></p>
+				<p><strong>Email:</strong> <a href="mailto:Guy.simai.dev@gmail.com">Guy.simai.dev@gmail.com</a></p>
+			</div>
+		</form>
+	</div>
+</div>

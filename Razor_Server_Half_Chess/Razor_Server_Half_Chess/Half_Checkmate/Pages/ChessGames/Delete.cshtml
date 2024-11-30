@@ -1,0 +1,68 @@
+﻿@page
+@model Razor_Server_Half_Chess.Pages.ChassGames.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container">
+    <div class="text-left mb-2 position-relative">
+        <h1 class="mystyle text-on-image">Half Chess</h1>
+    </div>
+
+    <div class="mt-5 position-relative">
+        <img src="~/Images/Homepage_Photo.jpeg" title="Homepage Photo" class="img-fluid" />
+
+        <div class="form-overlay">
+            <form method="post" autocomplete="on" action="">
+                <div class="overlay-content">
+                    <h1>Delete</h1>
+
+                    <h4>Are you sure you want to delete this user?</h4>
+
+                    <div class="table-container">
+                        <hr />
+                        <dl class="row">
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.TblChessGames.GameID)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.TblChessGames.GameID)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.TblChessGames.UserID)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.TblChessGames.UserID)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.TblChessGames.StartTime)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.TblChessGames.StartTime)
+                            </dd>
+                            <dt class="col-sm-2">
+                                Length
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.TblChessGames.GameLength)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.TblChessGames.Winner)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.TblChessGames.Winner)
+                            </dd>
+                        </dl>
+                    </div>
+
+                    <form method="post">
+                        <input type="hidden" asp-for="TblChessGames.GameID" />
+                        <input type="submit" value="Delete" class="btn btn-danger" /> |
+                        <a asp-page="./Index">Back to List</a>
+                    </form>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
