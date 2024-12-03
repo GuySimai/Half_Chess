@@ -140,7 +140,7 @@ public class ServerChoice
         if (response.IsSuccessStatusCode)
         {
             string jsonString = await response.Content.ReadAsStringAsync();
-            string randomString = jsonString.Trim('"'); // מסיר גרשיים מיותרים
+            string randomString = jsonString.Trim('"');
             return randomString;
         }
         return null;
