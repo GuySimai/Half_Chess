@@ -23,7 +23,7 @@ Welcome to the **Half Chess Project**! This repository showcases a unique implem
 ---
 
 ### 3. **Real-Time Multiplayer**
-- Players compete against a server-based AI or other players.
+- Players compete against the server.
 - The server handles moves and ensures fair play.
 
 <img width="1440" alt="Screen Shot 2024-11-30 at 21 43 59" src="https://github.com/user-attachments/assets/40ad12bd-4af9-467f-b175-07326a482e2a">
