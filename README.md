@@ -1,8 +1,6 @@
 # Half Chess
 
 Welcome to the Half Chess Project! This repository presents an innovative reimagining of chess, offering strategic modifications and a sleek web-based interface, all crafted using the .NET.  
-[![Watch the video](https://img.youtube.com/vi/b4PmKR1fd60/0.jpg)](https://www.youtube.com/watch?v=b4PmKR1fd60)
-
 
 ## 🧩 Features
 
