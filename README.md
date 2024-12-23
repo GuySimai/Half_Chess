@@ -1,14 +1,12 @@
 # Half Chess
 
-Welcome to the **Half Chess Project**! This repository showcases a unique implementation of chess, featuring strategic modifications and a web-based interface.
-
+Welcome to the Half Chess Project! This repository presents an innovative reimagining of chess, offering strategic modifications and a sleek web-based interface, all crafted using the .NET.
 ## 🧩 Features
 
 ### 1. **Half-Chess Board**
 - A smaller chessboard: 8x4 squares.
 - Includes standard pieces (King, Bishop, Knight, Rook, and Pawns).
-- Simplified rules for quicker and more strategic gameplay.
-
+- 
 ### **Game Dashboard**
 - Real-time updates and a timer for each move.
 
@@ -61,7 +59,6 @@ Welcome to the **Half Chess Project**! This repository showcases a unique implem
 - Visual representation of moves and strategies.
 
 <img width="724" alt="Screen Shot 2024-11-30 at 21 42 54" src="https://github.com/user-attachments/assets/a0db5c8c-32fb-45c8-9877-2876fe56e8f6">
-
 
 ---
 
